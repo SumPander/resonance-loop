@@ -2,6 +2,10 @@
 
 **A disciplined methodology for adding capability to any system without architectural drift.**
 
+<p align="center">
+  <img src="resonance-loop.svg" alt="The Resonance Loop — a directed dataflow: an Overseer frames intent; a Strategist discovers (kept loose, outside the pass/fail loop); a Gate checks the design against the architecture before the Builder implements; an Analyzer verifies in a build-verify loop; a Side-store feeds every node just-in-time; two human gates bless design and deploy." width="840">
+</p>
+
 Every addition should *fit* — proven against the architecture, not bolted on. The Resonance Loop is a small set of roles, gates, and disciplines that make "does this belong, and does it actually do what we intended?" a question no change can skip. It runs solo (one person/agent wearing every hat in sequence) or as a multi-agent harness.
 
 It is **not** a build-automation tool. The "loop" is the rigor of how work is dispatched and gated — not push-button automation.
