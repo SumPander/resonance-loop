@@ -22,6 +22,10 @@ Two disciplines, fused into one loop:
 - Any time you feel the pull toward a quick bolt-on and want a check against drift.
 - Evaluations, audits, or training/data runs that build no code but still need checks-and-balances (see **Universal**, below).
 
+## Scope — what it owns, what it hands off
+
+The loop is a **pre-merge fit discipline**: it owns the path from a need to a *blessed, verified* change (positioning → gate → shadow build → analyze → converge → deploy-bless). It does **not** own what runs after a change goes live. Around the loop, a host project still needs: a **versioned source-of-truth** (the side-store under version control, so past decisions are reproducible); a **regression check** protecting prior increments, deterministic where it can be; and a **standing monitor + rollback** so a change that decays after deploy is caught and revertible. The loop earns confidence up to deploy-bless; these keep it true after. Don't mistake the fit discipline for the whole delivery pipeline.
+
 ## The roles
 
 | Role | Holds | Asks | Must not |
@@ -94,6 +98,16 @@ A change is **done** when all three hold:
 3. **It is verified clean** — tests/telemetry green and a live observation shows the system healthy with it.
 
 "Done" = *integrated and doing what was intended* — not merely "it runs."
+
+### The convergence record (write it before you build)
+
+Principles do not stop a loop; an artifact does. Re-looping indefinitely with everything sandboxed and nothing committed is a loop-control failure — so before the first build iteration, record three things in the side-store and let the loop trip on them:
+
+1. **Mode** — ship / refine / optimize. (Ship: stop when the three points above pass. Refine: stop when the next change serves refinement, not purpose. Optimize: same fit at lower cost, fit proven unchanged.)
+2. **Done looks like: \_\_\_** — the specific, checkable end-state. Not "works well."
+3. **Iteration budget + escalation** — the expected number of build-verify passes; at the budget, *force-escalate to the human gate* with one line: *"unresolved axis = \_\_\_, or I am over-refining."* A re-loop that cannot name a *newly*-unresolved axis is auto-converged.
+
+This makes "converge — analysis that never builds is its own bolt-on" a step you cannot skip, not a reminder you can rationalize past.
 
 ## Universal — beyond code builds
 

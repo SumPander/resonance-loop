@@ -8,7 +8,7 @@
 
 Every addition should *fit* — proven against the architecture, not bolted on. The Resonance Loop is a small set of roles, gates, and disciplines that make "does this belong, and does it actually do what we intended?" a question no change can skip. It runs solo (one person/agent wearing every hat in sequence) or as a multi-agent harness.
 
-It is **not** a build-automation tool. The "loop" is the rigor of how work is dispatched and gated — not push-button automation.
+It is **not** a build-automation tool. The "loop" is the rigor of how work is dispatched and gated — not push-button automation. It is a **pre-merge fit discipline**: it owns the path to a blessed, verified change and hands off to your project's own versioning, regression checks, and post-deploy monitoring for what runs after.
 
 > **The intent, in one breath: build toward better — simply, and confidently.**
 > For every addition: *is this for the purpose, or just for more?*
@@ -22,7 +22,7 @@ Most systems don't rot from one bad decision; they rot from a hundred reasonable
 - **Both directions.** Forward-write the design, then attack it from the thing's own side. "Works from one angle" is not enough.
 - **Observe-first, shadow always.** Build the read-only version, watch real behavior, calibrate, *then* act — against a copy, never the live system, until verified.
 - **Two human gates.** Nothing touches the live system until a human blesses the design; nothing ships until a human blesses the deploy.
-- **Converge — then ship.** The rigor exists to *earn the confidence to act*, not to defer it. The loop must finish: stop when the thing fits its purpose; the next increment past that serves refinement, not the work. Stop is a feature.
+- **Converge — then ship.** The rigor exists to *earn the confidence to act*, not to defer it. The loop must finish: stop when the thing fits its purpose; the next increment past that serves refinement, not the work. Stop is a feature — and it's recorded up front as a small artifact (mode · *done looks like* · iteration budget) the loop trips on, so "finish" is a step, not a hope.
 
 ## Use it as a skill (slash command)
 

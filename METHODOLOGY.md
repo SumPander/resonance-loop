@@ -22,6 +22,8 @@ If stating the loop's intent ever needs more than this, the statement itself has
 
 The questions are the point. The loop exists so that when you build, you build *with understanding* — of the field, of the thing, of your own model, and of what it sets up for now and tomorrow.
 
+**Scope — what the loop owns, and what it hands off.** The loop is a *pre-merge fit discipline*. It owns the path from a need to a blessed, verified change: positioning → four-axis questioning → gate → shadow build → analyze → converge → deploy-bless. It does **not** own what runs *after* a change is live. Around the loop, a host project still needs three things, and you should name them when you fill the SPEC slots: a **versioned source-of-truth** so any past decision is reproducible (the side-store must itself be under version control, snapshotted per decision); a **regression check** that protects prior increments — deterministic wherever a check can be written as an exact or threshold test — so increment N cannot silently break increment N-3; and a **standing monitor plus a rollback path**, so a blessed change that decays after deploy is detected and revertible. The loop earns confidence *up to* deploy-bless; these are what keep that confidence true afterward. Claiming the loop is a full delivery pipeline, rather than the fit discipline at its front, is itself a drift.
+
 ---
 
 ## 1. The roles
@@ -129,6 +131,18 @@ One addition, three legitimate intents. Pick the mode *before* you build; the ga
 **The switch test (one breath):** *"Is this change serving the purpose, or just serving more?"*
 
 Both Refine and Optimize touch a thing that already works — but Optimize is the only mode that touches a working thing for a **non-purpose** reason (cost), so it carries the remediation bar (§5): prove the fit is unchanged, both directions, before and after.
+
+### 6d. The convergence record — the artifact, not the exhortation
+
+§6a–c are principles, and a principle does not stop a loop. The failure they exist to prevent — re-looping indefinitely, everything sandboxed, nothing ever committed — is a *loop-control* failure, and loop-control needs a controller, not an instruction to terminate. A reader who is inclined to over-refine will read "stop is a feature," reach for the one sanctioned escape ("a *specific* axis is unresolved"), and invoke it again and again while believing they are honoring the method. So the convergence discipline gets a controller: a small artifact the Overseer writes into the side-store **before the first build iteration**, which the loop then trips on.
+
+1. **Mode** — ship, refine, or optimize (§6c). One word, recorded.
+2. **Done looks like: \_\_\_** — the named, checkable end-state (§6b: *refined toward what?*). Not "works well"; the specific condition whose arrival means stop.
+3. **Iteration budget + escalation rule** — how many build-verify passes this increment is expected to take, and what happens at the budget. Hitting it does **not** auto-ship and does **not** silently start another pass; it **force-escalates to the human gate** with one written line: *"unresolved axis = \_\_\_, or I am over-refining."*
+
+The forcing function is the third item. Each pass past the budget must name **which** of the four axes is *newly* unresolved and why the prior pass failed to resolve it. A re-loop that cannot name a newly-unresolved axis is auto-converged — it has hit the purity trap (§6b) and goes to the gate. That is what turns "stop is a feature" from a sentiment into a step the loop cannot skip.
+
+Write the record before you build. An increment with no convergence record is not ready to start.
 
 ---
 
