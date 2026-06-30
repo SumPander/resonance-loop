@@ -2,6 +2,13 @@
 
 This is the long-form companion to [`SKILL.md`](./SKILL.md). It explains *why* each piece exists and walks one example end to end.
 
+## The intent of the loop (hold this whole, in one breath)
+
+> **Build toward better — simply, and confidently.**
+> For every addition: *is this for the purpose, or just for more?*
+
+If stating the loop's intent ever needs more than this, the statement itself has drifted. Keep it plain.
+
 ---
 
 ## 0. What it is, and what it is not
@@ -90,6 +97,38 @@ A change is **done** only when all three hold:
 3. **It is verified clean** — tests/telemetry green and a live observation shows the system healthy with it.
 
 "Done" = *integrated and doing what was intended* — not merely "it runs."
+
+### 6a. Converge — the loop must finish
+
+Analysis that never builds is its own bolt-on. A loop whose definition of done is *integrated and doing what was intended*, but which stops at a finding, has the disease it diagnoses: complete from the outside, all analysis and no act.
+
+The rigor exists to **earn the confidence to act** — not to defer action indefinitely. When the gate passes and the design is blessed, the loop is *licensed to build*; that license is the whole point of having run it.
+
+- An evaluation that builds nothing is valid (see §8) — but it must still **converge to a named next step**: the evidenced build it feeds forward.
+- "More analysis" is the answer only when a *specific* axis came back unresolved. Name the axis. Otherwise, converge.
+- Perpetual refinement is the purity trap (see §6b). **Stop is a feature.**
+
+### 6b. Refinement vs. purity — knowing when "done" is done
+
+Refinement has no stopping point in the abstract. *"How refined?"* has no answer — you can always polish further. The right question is **refined toward what?** — and the moment you name the purpose, the stopping point appears with it.
+
+**You stop when the thing fits its purpose, and the next increment would serve refinement itself rather than the purpose.** Not "works really well." Not "nothing else passes." *Fit to the named purpose.* The over-refiner and the under-builder fail the same definition of done from opposite sides.
+
+Confidence is the **earned permission to stop** — the validated knowledge that any further refinement would carry the thing past what its purpose needs.
+
+### 6c. The mode switch — refine, optimize, or ship
+
+One addition, three legitimate intents. Pick the mode *before* you build; the gate and the done-criterion change with it. Mixing them is how scope creeps.
+
+| Mode | The goal is… | Stop when… | Risk if wrong mode |
+|---|---|---|---|
+| **Ship** | It fits and does what was intended | The definition of done passes (§6) | Under-building |
+| **Refine** | It fits its purpose *better* | The next change serves refinement, not purpose (§6b) | Polishing waste |
+| **Optimize** | The same fit at lower cost (time / memory / power) | The cost target is met and the fit is unchanged | Breaking fit for speed |
+
+**The switch test (one breath):** *"Is this change serving the purpose, or just serving more?"*
+
+Both Refine and Optimize touch a thing that already works — but Optimize is the only mode that touches a working thing for a **non-purpose** reason (cost), so it carries the remediation bar (§5): prove the fit is unchanged, both directions, before and after.
 
 ---
 

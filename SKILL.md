@@ -7,6 +7,10 @@ description: A disciplined methodology for bringing any new capability into any 
 
 A process for adding capability to a system so that **every addition fits** — proven against the architecture, not bolted on. It works whether one person wears every hat in sequence or several agents run the roles in parallel. The value is the discipline, not the headcount.
 
+> **The intent, in one breath: build toward better — simply, and confidently.**
+> For every addition: *is this for the purpose, or just for more?*
+> The rigor exists to earn the confidence to act, then **converge** — analysis that never builds is its own bolt-on. Stop when the thing fits its purpose; the next increment past that serves refinement, not the work.
+
 Two disciplines, fused into one loop:
 
 1. **Activation within the existing system.** Before adding anything, ask whether the system *already* does this. Most "new" needs have a seat in what's already built. Reuse the existing primitives; add a new pathway only when one is genuinely earned.
