@@ -144,6 +144,17 @@ The forcing function is the third item. Each pass past the budget must name **wh
 
 Write the record before you build. An increment with no convergence record is not ready to start.
 
+### 6e. Deploy & validate — the bless is the act, not the approval
+
+A blessed change that is never applied has the disease of §6a: complete from the outside, nothing acted. The deploy-bless is **not** "approval to maybe build later" — it is the trigger of the act. When the gate passes and the human blesses, the loop's terminal motion runs:
+
+- **Apply** — make the change live, **reversibly**: a backup / rollback path exists *before* you touch the system.
+- **Validate** — re-run / re-awaken and **observe the real behavior against the intent** — not "it imports," but *does the new capability do what was intended, is the system healthy with it, did anything regress?* Observe with the system's own instruments where possible.
+- **Keep or revert** — clean → it stands; not clean → revert (the backup is why you can), and the failure is the next finding.
+- **Feed forward** — what the validation surfaces becomes the next evidenced increment. Build → learn → feed back → build the next.
+
+Without this motion the rigor produces a *finding*, not a *change* — and a finding that never ships is the purity trap (§6b) wearing a lab coat. An evaluation (§8) legitimately builds nothing, but it still converges to a **named next act**; a build that stops at a blessed design has simply not finished.
+
 ---
 
 ## 7. Worked example — filling the SPEC slots for a web service

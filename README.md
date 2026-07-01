@@ -41,8 +41,11 @@ You can also just **read it.** [`SKILL.md`](./SKILL.md) is the concise operating
 ```
 discovery (+ field/SOTA)  →  positioning  →  four-axis questioning  →  design + reverse-review
    →  GATE  →  build (shadow / isolated)  →  analyze (verify + meaning re-check)
-   →  converge  →  final eval  →  human deploy-bless
+   →  converge  →  final eval  →  human deploy-bless  →  APPLY (live, reversibly)
+   →  VALIDATE (re-run + observe)  →  keep or revert  →  feed the finding forward ↻
 ```
+
+The **deploy-bless is the act, not the approval** — it triggers apply → validate → feed-forward. A blessed change that never ships is analysis that never built.
 
 A **side-store** (the authoritative context) feeds every step fresh — never relayed down a chain.
 

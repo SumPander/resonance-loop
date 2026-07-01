@@ -43,8 +43,11 @@ The loop is a **pre-merge fit discipline**: it owns the path from a need to a *b
 ```
 discovery (+ field/SOTA)  →  positioning  →  four-axis questioning  →  design + reverse-review
    →  GATE  →  build (shadow / isolated)  →  analyze (verify + meaning re-check)
-   →  converge  →  final eval  →  human deploy-bless
+   →  converge  →  final eval  →  human deploy-bless  →  APPLY (live, reversibly)
+   →  VALIDATE (re-run + observe vs. intent)  →  keep or revert  →  feed the finding forward ↻
 ```
+
+The **deploy-bless is the act, not the approval**: it triggers apply → validate → feed-forward. A blessed change that never ships has the same disease as analysis that never builds (see "Definition of done").
 
 A **side-store** — the authoritative context (architecture map, design docs, the laws) — feeds **every** step fresh. Never relay it down a chain; relaying degrades it. This is the structural fix for drift.
 
