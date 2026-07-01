@@ -24,15 +24,19 @@ Most systems don't rot from one bad decision; they rot from a hundred reasonable
 - **Two human gates.** Nothing touches the live system until a human blesses the design; nothing ships until a human blesses the deploy.
 - **Converge — then ship.** The rigor exists to *earn the confidence to act*, not to defer it. The loop must finish: stop when the thing fits its purpose; the next increment past that serves refinement, not the work. Stop is a feature — and it's recorded up front as a small artifact (mode · *done looks like* · iteration budget) the loop trips on, so "finish" is a step, not a hope.
 
-## Use it as a skill (slash command)
+## Use it as a skill — three modes (slash commands)
 
-This repo ships as a portable agent **skill**. With a compatible agent/CLI (e.g. Claude Code), drop the skill in and invoke it:
+This repo ships as a portable agent **skill** with three entry points. Pick your intent up front — it keeps each invocation focused and the pipeline stable:
 
-```
-/resonance-loop
-```
+| Command | Mode | Deploy | Use for |
+|---|---|---|---|
+| `/resonance-loop` | Full methodology (reference) | — | The complete loop + a worked example |
+| `/rl-theory` | Theory / test-bench | **OFF** | Design passes, evaluations, audits, observe-first dry-runs — the rigor without shipping; converges to a named finding |
+| `/rl-deploy` | Full CI/CD pipeline | **ON** | Shipping a change into the live system — converge → deploy-bless → apply → validate → feed-forward |
 
-**Install:** copy [`SKILL.md`](./SKILL.md) into your agent's skills directory as `resonance-loop/SKILL.md` (for Claude Code: `~/.claude/skills/resonance-loop/SKILL.md`, or add this repo as a plugin). The skill is self-contained — the front-matter `description` tells the agent when to reach for it.
+The split is deliberate. `/rl-theory` runs the whole discipline with the deploy stage **disabled** — it stops at a proven finding you hand to `/rl-deploy`. `/rl-deploy` runs the terminal **apply → validate → feed-forward** motion. Same skeleton, different terminus — so you carry only the context the moment needs.
+
+**Install:** copy each skill directory into your agent's skills folder (for Claude Code: `~/.claude/skills/<name>/SKILL.md`, or add this repo as a plugin). The three skills live at [`SKILL.md`](./SKILL.md), [`rl-theory/SKILL.md`](./rl-theory/SKILL.md), and [`rl-deploy/SKILL.md`](./rl-deploy/SKILL.md); each is self-contained and its front-matter `description` tells the agent when to reach for it.
 
 You can also just **read it.** [`SKILL.md`](./SKILL.md) is the concise operating guide; [`METHODOLOGY.md`](./METHODOLOGY.md) is the deep dive with a fully worked example.
 
